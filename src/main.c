@@ -28,6 +28,12 @@ int main(int argc, char *argv[]){
 	}
 	else {printf("Erreur de parametres");}
 	}
+
+	else if (argc == 3 && strcmp(argv[1], "square") == 0) {
+        char* a = argv[2];
+        double r = _car(atof(a));
+        printf("%lf", r);
+    }
 	else {printf("Erreur de parametres");}
 	return 0;
 }
