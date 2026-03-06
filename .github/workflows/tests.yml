@@ -93,14 +93,10 @@ jobs:
           cmake ..
           make
           ./src/calculator car 5
-
-      - name: Run test "car" and get a report as artifact
-        run: |
-          cd build
-          set -e
           echo "== Test car 5 ==" > report_car.txt
           ./src/calculator car 5 | tee -a report_car.txt
           echo "Exit code: $?" >> report_car.txt
+          ./src/calculator car 5
 
       - name: Get report output
         run: |
