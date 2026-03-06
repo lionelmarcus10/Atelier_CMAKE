@@ -98,15 +98,10 @@ jobs:
           echo "Exit code: $?" >> report_car.txt
           ./src/calculator car 5
 
-      - name: Get report output
-        run: |
-          ls -la build 
-          cat build/report_car.txt
-
       - name: Upload report as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: test-car-report
+          name: Test fonction car
           path: build/report_car.txt
           retention-days: 14
 
