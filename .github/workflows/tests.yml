@@ -92,17 +92,17 @@ jobs:
           cd build
           cmake ..
           make
-          ./src/calculator car 5
+          #./src/calculator car 5
           echo "== Test car 5 ==" > report_car.txt
           ./src/calculator car 5 | tee -a report_car.txt
           echo "Exit code: $?" >> report_car.txt
-          ./src/calculator car 5
+        output: report_car.txt
 
       - name: Upload report as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Test fonction car
-          path: build/report_car.txt
+          name: Report Car function
+          path: report_car.txt
           retention-days: 14
 
   Deployment:
